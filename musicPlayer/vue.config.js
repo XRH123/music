@@ -5,6 +5,9 @@ function resolve(dir) {
 }
 
 module.export = {
+	publicPath: process.env.NODE_ENV === 'production'?
+			'./' :
+			'/',
 	configureWebpack: {
 		resolve: {
 			extensions: ['.js', '.vue', '.scss', '.json']
