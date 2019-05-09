@@ -1,0 +1,28 @@
+.tab-nav{
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    text-align: center;
+    background-color: #060506;
+    padding: 10px 0;
+    a{
+        flex-grow: 1;
+        display: block;
+        font-size: 16px;
+        color: #fff;
+        &.current{
+            color:red;
+            &::after{
+                content: '';
+                display: block;
+                width: 32px;
+                height: 1px;
+                background:red;
+                margin: 5px auto 0;
+            }
+        }
+    }
+}

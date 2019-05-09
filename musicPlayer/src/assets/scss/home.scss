@@ -1,0 +1,19 @@
+.home{
+    #warpper{
+        overflow: hidden;
+        #warpper-con{
+            .loading-con{
+                display: flex;
+                justify-content: center;
+                .loading-img{
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 8px;
+                    background: url(../assets/images/loading.gif) no-repeat;
+                    background-size: 100% 100%
+                }
+            }
+        }
+    }
+}

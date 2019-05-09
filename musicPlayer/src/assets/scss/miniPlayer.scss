@@ -1,0 +1,190 @@
+.mini-page{
+    .song-list{
+        position: fixed;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-end;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        height: 100vh;
+        background: rgba(6,5,6,.5);
+        .header{
+            display: flex;
+            color: #8e8e8e;
+            align-items: center;
+            height: 60px;
+            background: #060506;
+            padding-left: 25px;
+            .cutPlayMode{
+                flex: 1;
+                display: flex;
+                align-items: center;
+                i{
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 5px;
+                    &.mode-circle{
+                        background: url(../../assets/images/ModeCircle.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    &.mode-random{
+                        background: url(../../assets/images/ModeRandom.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    &.mode-single{
+                        background: url(../../assets/images/ModeSingle.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+            .del-all{
+                line-height: 60px;
+                padding: 0 15px 0 10px;
+                display: inline-block;
+                height: 18px;
+                margin-right: 20px;
+                background: url(../../assets/images/DelAll.png) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+        .con{
+            overflow: hidden;
+            background: #060506;
+            height: 300px;
+            ul{
+                padding: 2px 20px 2px 50px;
+                color: #fff;
+                li{
+                    display: flex;
+                    line-height: 30px;
+                    position: relative;
+                    &.current.playing::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: -20px;
+                        top: 50%;
+                        margin-top: -7px;
+                        width: 13px;
+                        height: 13px;
+                        background: url(../../assets/images/StatePlay.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    &.current.paused::before{
+                        content:'';
+                        display: block;
+                        position: absolute;
+                        left: -20px;
+                        top: 50%;
+                        margin-top: -7px;
+                        width: 13px;
+                        height: 13px;
+                        background: url(../../assets/images/StatePaused.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    p{
+                        flex:1;
+                        font-size: 12px;
+                    }
+                    .songOpt{
+                        display: flex;
+                        align-items: center;
+                        i{
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
+                            &.like{
+                                background: url(../../assets/images/FavoriteSong.png) no-repeat;
+                                background-size: 100% 100%;
+                                margin-right: 5px;
+                            }
+                            &.del{
+                                background: url(../../assets/images/DelSingle.png) no-repeat;
+                                background-size: 100% 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .close{
+            line-height: 50px;
+            background: #101010;
+            color: #3e3d3d;
+            font-size: 15px;
+            text-align: center;
+        }
+    }
+    .mini-player-info{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+        left: 0;
+        bottom: 0;
+        height: 60px;
+        width: 100vw;
+        padding-left: 18px;
+        background:#101010;
+        box-sizing: border-box;
+        color:#FFF;
+        .thumb{
+            animation: running 4s linear infinite;
+            &.stop{
+                animation-play-state:paused;
+            }
+            img{
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+            }
+            @keyframes running{
+                from {
+                    transform: rotateZ(0DEG)
+                }
+                to{
+                    transform: rotateZ(1turn)
+                }
+            }
+        }
+        .mini-player-con{
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            margin-left: 16px;
+            height: 100%;
+            width: 60vw;
+        }
+        .mini-player-options{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 0;
+            right: 10px;
+            width: 70px;
+            height: 100%;
+            a{
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                background-size: 100% 100%;
+                &.paused{
+                    background-image: url(../../assets/images/StatePaused.png);
+                }
+                &.playing{
+                    background-image: url(../../assets/images/StatePlay.png);
+                }
+                &.songsList{
+                    margin-left: 10px;
+                    background-image: url(../../assets/images/SongList.png)
+                }
+            }
+        }
+    }
+    .mini-player{
+        display: none;
+    }
+}

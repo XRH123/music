@@ -1,0 +1,67 @@
+.singer{
+    .curClassify{
+        overflow: hidden;
+        h2{
+            position: absolute;
+            z-index: 33;
+            top: 100px;
+            width: 100vw;
+            font-size: 14px;
+            line-height: 30px;
+            background: #131313;
+            font-weight: 400;
+            text-indent: 1em;
+            color: #fff;
+        }
+    }
+    #singerWapper{
+        overflow: hidden;
+        .classify{
+            font-size: 15px;
+            line-height: 30px;
+            background: #131313;
+            font-weight: 400;
+            text-indent: 1em;
+            color: #fff;
+        }
+        ol{
+            padding-left: 25px;
+            padding-bottom: 20px;
+            li{
+                display: flex;
+                line-height: 50px;
+                margin-top: 20px;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+                p{
+                    color: #fff;
+                    flex-grow: 1;
+                    margin-left: 20px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+    .right{
+        width: 16px;
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        margin-top: -165px;
+        background-color: hsla(0,0%,92%,.1);
+        border-radius: 10px;
+        padding: 5px 0;
+        color: #c8c8c8;
+        text-align: center;
+        transform: translateX(30px);
+        .on{
+            color: #d3442c;
+        }
+    }
+}

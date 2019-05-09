@@ -1,0 +1,169 @@
+.FullPlayer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100vw;
+    height: 100vh;
+    background:#000;
+    .header{
+        position: absolute;
+        z-index: 1001;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color:#FFF;
+        animation:head-running .5s cubic-bezier(.25,.1,0,1.89);
+        @keyframes head-running{
+            from{
+                transform: translateY(-75px)
+            }
+            to{
+                transfrom: translateY(0)
+            }
+        }
+        h1{
+            i{
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                width: 25px;
+                height: 25px;
+                padding: 15px;
+                z-index: 1001;
+                background: url(../../assets/images/indexGoBack.png) no-repeat;
+                background-size: 25px 25px;
+                background-position: 50%;
+            }
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 55px;
+        }
+        p{
+            font-size: 15px;
+        }
+    }
+    .playing-thumb{
+        position: absolute;
+        z-index: 1001;
+        top: 100px;
+        left: 0;
+        right: 0;
+        width: 250px;
+        height: 250px;
+        margin: 20px auto;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 10px solid rgba(0,0,0,.26);
+        animation: running 4s linear infinite;
+        &.stop{
+            animation-play-state:paused;
+        }
+        img{
+            width: 100%;
+            height:100%;
+        }
+        @keyframes running{
+            from {
+                transform:rotateZ(0DEG)
+            }
+            to{
+                transform:rotateZ(1turn)
+            }
+        }
+    }
+    .background{
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 100vw;
+            height: 100vh;
+            filter: blur(20px);
+            background-size: 100% 100%;
+        }
+    }
+    .opt-state{
+        position: fixed;
+        display: flex;
+        width: 100vw;
+        bottom: 30px;
+        z-index: 1001;
+        justify-content: space-around;
+        animation: opt-running .5s cubic-bezier(.25,.1,0,1.89);
+        @keyframes opt-running{
+            from{
+                transform:translateY(30px)
+            }
+            to{
+                transform:translateY(0px)
+            }
+        }
+        .opt{
+            width: 30px;
+            height: 30px;
+            background-size: 100% 100%;
+        }
+        .mode-circle{
+            background-image: url(../../assets/images/ModeCircle.png);
+        }
+        .mode-random{
+            background-image: url(../../assets/images/ModeRandom.png);
+        }
+        .mode-single{
+            background-image: url(../../assets/images/ModeSingle.png);
+        }
+        .pre{
+            background-image: url(../../assets/images/PrevSong.png);
+        }
+        .paused{
+            background-image: url(../../assets/images/StatePaused.png);
+        }
+        .playing{
+            background-image: url(../../assets/images/StatePlay.png);
+        }
+        .next{
+            background-image: url(../../assets/images/NextSong.png);
+        }
+        .favorite{
+            background-image: url(../../assets/images/FavoriteSong.png);
+        }
+    }
+    ul.choose-mode{
+        position: absolute;
+        display: block;
+        left: 22px;
+        bottom: 60px;
+        z-index: 1001;
+        overflow: hidden;
+        li{
+            display: block;
+            width: 30px;
+            height: 30px;
+            transform: translateY(90px);
+            @keyframes ChooseMode{
+                from{
+                    transform: translateY(90px);
+                }
+                to{
+                    transform: translateY(0);
+                }
+            }
+            &.mode-list{
+                background-size: 100% 100%;
+            }
+            &.mode-circle{
+                background-image: url(../../assets/images/ModeCircle.png);
+            }
+            &.mode-random{
+                background-image: url(../../assets/images/ModeRandom.png);
+            }
+            &.mode-single{
+                background-image: url(../../assets/images/ModeSingle.png);
+            }
+        }
+    }
+}
